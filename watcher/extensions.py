@@ -6,7 +6,6 @@
 import logging
 import os
 
-import yagmail
 import yaml
 from flask import Flask
 from flask_apscheduler import APScheduler as _BaseAPScheduler
@@ -26,7 +25,7 @@ class APScheduler(_BaseAPScheduler):
 
 app = Flask(__name__)
 # 读取配置
-with open("local_config.yaml", "rt", encoding="utf8") as f:
+with open("config.yaml", "rt", encoding="utf8") as f:
     print("use {} config.yaml".format(os.path.abspath(".")))
     conf = yaml.safe_load(f)
 
@@ -49,7 +48,6 @@ def init_app():
     scheduler.init_app(app)
     scheduler.start()
 
-    yagmail.register(app.config["username"], app.config["passwd"])
     app.browser = init_browser(app)
 
     from watcher.weibo_watcher import scheduler_init

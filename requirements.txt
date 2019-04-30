@@ -1,8 +1,7 @@
-Flask_Migrate
+flask_migrate
 Flask
 yagmail
-Flask_Script
-Flask_SQLAlchemy
-Flask_APScheduler
+pyyaml
+flask_redis
 selenium
 keyring
