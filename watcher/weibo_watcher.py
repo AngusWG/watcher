@@ -32,7 +32,7 @@ def send_email():
         logger.info("没有更新")
         return False
     yag = yagmail.SMTP(current_app.config["username"], current_app.config["passwd"], host='smtp.qq.com')
-    yag.send(to='740713651@qq.com', subject='微博更新通知 v2.0',
+    yag.send(to='740713651@qq.com', subject='微博更新通知',
              contents=[yagmail.inline(image_path) for image_path in png_list])
     [os.remove(file) for file in png_list]
     return True
