@@ -3,7 +3,6 @@
 # @Time    : 2019/4/29 18:22
 # @Author  : zza
 # @Email   : 740713651@qq.com
-import os
 
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
@@ -14,7 +13,7 @@ def init_browser(app):
     dcap = dict(DesiredCapabilities.PHANTOMJS)
     dcap["phantomjs.page.settings.userAgent"] = app.config["user_agent"]
     dcap["phantomjs.page.settings.loadImages"] = True
-    browser = webdriver.PhantomJS(os.path.join(app.root_path, "phantomjs"),
+    browser = webdriver.PhantomJS("./phantomjs",
                                   service_args=service_args,
                                   desired_capabilities=dcap)
     return browser
