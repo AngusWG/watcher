@@ -1,0 +1,8 @@
+Flask_Migrate
+Flask
+yagmail
+Flask_Script
+Flask_SQLAlchemy
+Flask_APScheduler
+selenium
+keyring
