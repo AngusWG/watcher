@@ -49,7 +49,7 @@ def made_png(user_id):
     file_name = "{}_{}.png".format(str(user_id), str(int(time.time())))
     time.sleep(3)
     current_app.browser.save_screenshot(file_name)
-    [redis_store.hset(user_id, text, True) for text in texts]
+    [redis_store.hset(user_id, text, "True") for text in texts]
     logger.info("{}扫描完成".format(user_id))
     return True
 
