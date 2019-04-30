@@ -13,6 +13,7 @@ subject: 微博更新通知
 
 user_agent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6716.400 QQBrowser/10.2.2214.40'
 proxy_url: http://localhost:8080
+phantomjs: ./phantomjs.exe
 
 SCHEDULER_CONFIG:
   seconds: 5

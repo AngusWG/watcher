@@ -13,7 +13,7 @@ def init_browser(app):
     dcap = dict(DesiredCapabilities.PHANTOMJS)
     dcap["phantomjs.page.settings.userAgent"] = app.config["user_agent"]
     dcap["phantomjs.page.settings.loadImages"] = True
-    browser = webdriver.PhantomJS("./phantomjs",
+    browser = webdriver.PhantomJS(app.config["phantomjs"],
                                   service_args=service_args,
                                   desired_capabilities=dcap)
     return browser
