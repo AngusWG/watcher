@@ -3,8 +3,8 @@
 # @Time    : 2019/4/29 17:57
 # @Author  : zza
 # @Email   : 740713651@qq.com
-
-from os.path import dirname, join
+import re
+import ast
 
 try:
     # for pip >= 10
@@ -18,8 +18,10 @@ from setuptools import (
     setup
 )
 
-with open(join(dirname(__file__), 'watcher/VERSION.txt'), 'rb') as f:
-    version = f.read().decode('ascii').strip()
+_version_re = re.compile(r'__version__\s+=\s+(.*)')
+
+with open('rqportal/__init__.py', 'rb') as f:
+    version = str(ast.literal_eval(_version_re.search(f.read().decode('utf-8')).group(1)))
 
 ext_modules = [
 ]
